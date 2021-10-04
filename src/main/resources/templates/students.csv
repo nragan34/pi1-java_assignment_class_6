@@ -1,0 +1,11 @@
+[# th:each="student : ${students}"]
+[# th:each="course : ${student.courses}"]
+[# th:each="assignment : ${course.assignments}"]
+[(${student.lastName})], [(${student.firstName})], [(${#numbers.formatDecimal(course.averageGrade,1, 1)})], [(${course.name})], [(${assignment.name})], [(${#dates.format(assignment.date, 'mm-dd-yyyy')})], [(${#numbers.formatDecimal(assignment.grade,1, 1)})]
+[/][/][/]
+
+
+
+
+
+
