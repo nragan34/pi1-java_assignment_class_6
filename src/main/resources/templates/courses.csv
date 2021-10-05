@@ -1,0 +1,9 @@
+Course, Last Name, First Name, Average
+[# th:each="course : ${courses}"][(${course.courseName})], [(${course.lastName})], [(${course.firstName})], [(${#numbers.formatDecimal(course.averageGrade,1, 1)})]
+[/]
+
+
+
+
+
+

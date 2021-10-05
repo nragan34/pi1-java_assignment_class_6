@@ -1,7 +1,5 @@
-[# th:each="student : ${students}"]
-[# th:each="course : ${student.courses}"]
-[# th:each="assignment : ${course.assignments}"]
-[(${student.lastName})], [(${student.firstName})], [(${#numbers.formatDecimal(course.averageGrade,1, 1)})], [(${course.name})], [(${assignment.name})], [(${#dates.format(assignment.date, 'mm-dd-yyyy')})], [(${#numbers.formatDecimal(assignment.grade,1, 1)})]
+student last name, student first name, course name, overall course average grade, assignment name, assignment date, assignment grade
+[# th:each="student : ${students}"][# th:each="course : ${student.courses}"][# th:each="assignment : ${course.assignments}"][(${student.lastName})], [(${student.firstName})], [(${course.name})], [(${#numbers.formatDecimal(course.averageGrade,1, 1)})], [(${assignment.name})], [(${#dates.format(assignment.date, 'MM-dd-yyyy')})], [(${#numbers.formatDecimal(assignment.grade,1, 1)})]
 [/][/][/]
 
 

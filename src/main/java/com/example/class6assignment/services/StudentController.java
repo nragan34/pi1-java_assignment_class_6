@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class StudentController {
     private final StudentsCsvUseCase studentsCsvUseCase;
 
+
     @Autowired
     public StudentController(StudentsCsvUseCase studentsCsvUseCase) {
         this.studentsCsvUseCase = studentsCsvUseCase;
+
     }
+
 
     @GetMapping(path = "/students")
     public ResponseEntity getStudentsAsCsv() {
@@ -30,9 +33,9 @@ public class StudentController {
     public ResponseEntity getCoursesAsCsv() {
 
         return ResponseEntity.ok()
-            .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=students.csv")
+            .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=courses.csv")
             .contentType(MediaType.MULTIPART_FORM_DATA)
-            .body(studentsCsvUseCase.getStudentsAsCsv());
+            .body(studentsCsvUseCase.getCoursesAsCsv());
     }
 
 }
